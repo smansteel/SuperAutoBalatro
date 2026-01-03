@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>zip.maxime</groupId>
-    <artifactId>multi-bala</artifactId>
+    <artifactId>super-auto-balatro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>multi-bala</name>
-    <description>multi-bala</description>
+    <name>super-auto-balatro</name>
+    <description>super-auto-balatro</description>
     <url/>
     <licenses>
         <license/>

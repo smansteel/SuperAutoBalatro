@@ -1,4 +1,4 @@
-package zip.maxime.multibala;
+package zip.maxime.superautobalatro;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
