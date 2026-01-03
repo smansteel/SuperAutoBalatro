@@ -9,46 +9,46 @@ public class GameController {
     @Autowired
     GameService gameService;
 
-    @GetMapping("{sid}")
-    public String getGameState(@PathVariable String sid, @RequestBody String uid){
+    @GetMapping()
+    public String getGameState(@RequestParam("sid") String sid, @RequestParam("uid") String uid){
         if(!gameService.exist(sid)){
             return "kys";
         }
         return gameService.getGameState(sid, uid);
     }
 
-    @PostMapping("create/{deflives}")
-    public String createGame(@RequestBody String uid, @PathVariable Integer deflives){
+    @PostMapping("create")
+    public String createGame(@RequestParam("uid") String uid, @RequestParam("deflives") Integer deflives){
         String sid = gameService.create(uid, deflives);
         return gameService.getGameState(sid, uid);
     }
 
-    @PostMapping("{sid}/start/{deck}/{stake}/{seed}")
-    public String startGame(@PathVariable String sid, @RequestBody String uid, @PathVariable String deck, @PathVariable String stake, @PathVariable String seed){
+    @PostMapping("start")
+    public String startGame(@RequestParam("sid") String sid, @RequestParam("uid") String uid, @RequestParam("deck") String deck, @RequestParam("stake") String stake, @RequestParam("seed") String seed){
         if(!gameService.exist(sid)){
             return "kys";
         }
         return gameService.start(sid, uid, deck, stake, seed);
     }
 
-    @PostMapping("{sid}/join")
-    public String startGame(@PathVariable String sid, @RequestBody String uid){
+    @PostMapping("join")
+    public String startGame(@RequestParam("sid") String sid, @RequestParam("uid") String uid){
         if(!gameService.exist(sid)){
             return "kys";
         }
         return gameService.playerJoin(sid, uid);
     }
 
-    @PostMapping("{sid}/kill")
-    public String killGame(@PathVariable String sid, @RequestBody String uid){
+    @PostMapping("kill")
+    public String killGame(@RequestParam("sid") String sid, @RequestParam("uid") String uid){
         if(!gameService.exist(sid)){
             return "kys";
         }
         return gameService.kill(sid, uid);
     }
 
-    @PostMapping("{sid}/ante/{score}")
-    public String postScore(@PathVariable String sid, @RequestBody String uid, @PathVariable String score){
+    @PostMapping("ante")
+    public String postScore(@RequestParam("sid") String sid, @RequestParam("uid") String uid, @RequestParam("score") String score){
         if(!gameService.exist(sid)){
             return "kys";
         }

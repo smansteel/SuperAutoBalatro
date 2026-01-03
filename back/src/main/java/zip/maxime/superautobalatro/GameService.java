@@ -2,6 +2,7 @@ package zip.maxime.superautobalatro;
 
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -9,7 +10,7 @@ import java.util.UUID;
 @Service
 public class GameService {
 
-    Map<String, GameState> gameStateMap;
+    Map<String, GameState> gameStateMap = new HashMap<>();
 
     public boolean exist(String sid){
         return gameStateMap.containsKey(sid);
@@ -23,10 +24,7 @@ public class GameService {
     public String create(String uid, Integer deflives){
         String sid = UUID.randomUUID().toString();
         gameStateMap.put(sid, new GameState(sid, uid, deflives));
-        GameStateAndResponse g = gameStateMap.get(sid).playerJoin(uid);
-
-        gameStateMap.replace(sid, g.gameState);
-        return g.response;
+        return sid;
     }
 
     public String playerJoin(String sid, String uid){

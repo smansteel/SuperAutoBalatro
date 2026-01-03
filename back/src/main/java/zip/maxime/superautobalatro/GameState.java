@@ -50,6 +50,8 @@ public class GameState {
         this.sessionId = sessionId;
         this.masterId = masterId;
         this.defLives = defLives;
+        this.playerList = new HashMap<>();
+        this.playerList.put(masterId, defLives);
 
     }
 
