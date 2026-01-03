@@ -1,0 +1,13 @@
+{
+  "id": "SuperAutoBalatroMod",
+  "name": "SuperAutoBalatroMod",
+  "author": ["Echidori, sman_steel"],
+  "description": "Multiplayer Balatro mod for personal use",
+  "prefix": "sap",
+  "main_file": "super_auto_balatro.lua",
+  "badge_colour": "b00b69",
+  "dependencies": [
+    "Steamodded (>=1.0.0~ALPHA-1225a)"
+  ],
+  "version": "1.0.0"
+}
